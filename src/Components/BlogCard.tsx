@@ -15,7 +15,13 @@ const BlogCard: React.FC<BlogCardProps> = ({
   clickDisabled,
 }) => {
   return (
-    <div className="hover:shadow-lg hover:shadow-blue-200 shadow focus:cursor-pointer rounded-md p-5">
+    <div
+      className={
+        !clickDisabled
+          ? `hover:shadow-lg hover:shadow-blue-200 shadow focus:cursor-pointer rounded-md p-5`
+          : ``
+      }
+    >
       <Link
         href={{ pathname: `/posts/${id}`, query: { title, body, id } }}
         as={`/posts/${id}`}
